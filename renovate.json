@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Updates arrive as reviewed pull requests, and only for releases at least seven days old, since poisoned releases are usually found and pulled within days. Images stay named by digest.",
+  "description": "Reviewed updates that wait out a seven-day release delay. Security fixes wait too; a fix that cannot wait goes in as a written exception.",
   "extends": ["config:recommended"],
   "minimumReleaseAge": "7 days",
   "minimumReleaseAgeBehaviour": "timestamp-required",
