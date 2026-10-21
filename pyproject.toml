@@ -1,0 +1,29 @@
+[project]
+name = "calendar-tetromino-puzzle"
+version = "0.1.0"
+description = "A gRPC server that solves the calendar Tetromino puzzle"
+requires-python = ">=3.11,<3.12"
+# The versions requirements.txt pinned, carried over unchanged.
+dependencies = [
+    "ace_tools==0.0",
+    "dlx==1.0.4",
+    "grpcio==1.71.0",
+    "grpcio-tools==1.71.0",
+    "numpy==2.2.5",
+    "pandas==2.2.3",
+    "protobuf==5.29.4",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2025.2",
+    "setuptools==80.3.1",
+    "six==1.17.0",
+    "tzdata==2025.2",
+]
+
+[tool.uv]
+# Not an installable package: uv installs the dependencies and nothing else.
+package = false
+# A release must be seven days old before a lock may pick it; poisoned releases are usually pulled within days.
+exclude-newer = "7 days"
+# dlx publishes only a source archive. Building it in the project's own environment uses the locked,
+# hash-checked setuptools above, instead of a build tool fetched unlocked at image build time.
+no-build-isolation-package = ["dlx"]
