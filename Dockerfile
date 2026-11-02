@@ -27,6 +27,13 @@ COPY . .
 ENV PYTHONPATH=/app
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Run as a fixed non-root user that owns nothing in the image. On a host whose Docker daemon does not remap IDs,
+# the container's IDs are host IDs, so an escape lands as this one; personal-portfolio runs it as the same 10202,
+# which no account on that host uses.
+RUN groupadd --system --gid 10202 solver \
+    && useradd --system --uid 10202 --gid 10202 --no-create-home --home-dir /nonexistent --shell /usr/sbin/nologin solver
+USER 10202:10202
+
 # Expose the gRPC server port (e.g., 50051)
 EXPOSE 50051
 
