@@ -7,11 +7,6 @@ COPY --from=ghcr.io/astral-sh/uv:0.13.1@sha256:4a1f3666816dafadd20ceb71eac9a7d56
 # Set working directory inside the container
 WORKDIR /app
 
-# Install system dependencies (optional: needed for pip or grpc)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
 # Use the image's Python, never a downloaded one
 ENV UV_PYTHON_DOWNLOADS=never
 

@@ -7,20 +7,10 @@ exclude-newer = "0001-01-01T00:00:00Z" # This has no effect and is included for 
 exclude-newer-span = "P7D"
 
 [[package]]
-name = "ace-tools"
-version = "0.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/bc/b8/7ebb8193c5aa0b701983436e4460cacaa1efa30910a17c4319d514ca7827/ace_tools-0.0.tar.gz", hash = "sha256:fe23f94302886b789cd1ebd8c7559da615c993b86e9f36a8a46034cf3e484ef5", size = 919, upload-time = "2024-07-06T23:19:22.739Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/27/c4/402d3ae2ecbfe72fbdcb2769f55580f1c54a3ca110c44e1efc034516a499/ace_tools-0.0-py3-none-any.whl", hash = "sha256:1b5d4b0f6eeb8dfc1b04986af413cc529a9a5167d53db5cde5b91ac8f9d00374", size = 1085, upload-time = "2024-07-06T23:19:21.168Z" },
-]
-
-[[package]]
 name = "calendar-tetromino-puzzle"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "ace-tools" },
     { name = "dlx" },
     { name = "grpcio" },
     { name = "grpcio-tools" },
@@ -36,7 +26,6 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ace-tools", specifier = "==0.0" },
     { name = "dlx", specifier = "==1.0.4" },
     { name = "grpcio", specifier = "==1.71.0" },
     { name = "grpcio-tools", specifier = "==1.71.0" },
