@@ -1,7 +1,7 @@
 import unittest
 
-from CalendarTetrominoPuzzle.calendar_solver.calendar_solver.tetromino import (
-    InvalidShapeError, Shape, tetromino)
+from calendar_solver.calendar_solver.tetromino import (InvalidShapeError,
+                                                Shape, Tetromino)
 
 
 class Testtetromino(unittest.TestCase):
@@ -10,16 +10,16 @@ class Testtetromino(unittest.TestCase):
         Set up test data for tetromino pieces.
         """
         self.tetrominos = {
-            "small_L_tetromino": tetromino(Shape(2, 3, [[1, 0], [1, 0], [1, 1]]), "sL"),
-            "big_L_tetromino": tetromino(Shape(2, 4, [[1, 0], [1, 0], [1, 0], [1, 1]]), "bL"),
-            "symmetrical_L_tetromino": tetromino(Shape(3, 3, [[1, 0, 0], [1, 0, 0], [1, 1, 1]]), "symL"),
-            "lowercase_l_tetromino": tetromino(Shape(1, 4, [[1], [1], [1], [1]]), "l"),
-            "u_tetromino": tetromino(Shape(3, 2, [[1, 0, 1], [1, 1, 1]]), "U"),
-            "small_z_tetromino": tetromino(Shape(3, 2, [[1, 1, 0], [0, 1, 1]]), "sZ"),
-            "big_z_tetromino": tetromino(Shape(4, 2, [[0, 0, 1, 1], [1, 1, 1, 0]]), "bZ"),
-            "z_tetromino": tetromino(Shape(3, 3, [[0, 1, 1], [0, 1, 0], [1, 1, 0]]), "Z"),
-            "t_tetromino": tetromino(Shape(3, 3, [[1, 1, 1], [0, 1, 0], [0, 1, 0]]), "T"),
-            "p_tetromino": tetromino(Shape(2, 3, [[1, 1], [1, 1], [1, 0]]), "P"),
+            "small_L_tetromino": Tetromino(Shape(2, 3, [[1, 0], [1, 0], [1, 1]]), "sL"),
+            "big_L_tetromino": Tetromino(Shape(2, 4, [[1, 0], [1, 0], [1, 0], [1, 1]]), "bL"),
+            "symmetrical_L_tetromino": Tetromino(Shape(3, 3, [[1, 0, 0], [1, 0, 0], [1, 1, 1]]), "symL"),
+            "lowercase_l_tetromino": Tetromino(Shape(1, 4, [[1], [1], [1], [1]]), "l"),
+            "u_tetromino": Tetromino(Shape(3, 2, [[1, 0, 1], [1, 1, 1]]), "U"),
+            "small_z_tetromino": Tetromino(Shape(3, 2, [[1, 1, 0], [0, 1, 1]]), "sZ"),
+            "big_z_tetromino": Tetromino(Shape(4, 2, [[0, 0, 1, 1], [1, 1, 1, 0]]), "bZ"),
+            "z_tetromino": Tetromino(Shape(3, 3, [[0, 1, 1], [0, 1, 0], [1, 1, 0]]), "Z"),
+            "t_tetromino": Tetromino(Shape(3, 3, [[1, 1, 1], [0, 1, 0], [0, 1, 0]]), "T"),
+            "p_tetromino": Tetromino(Shape(2, 3, [[1, 1], [1, 1], [1, 0]]), "P"),
         }
 
     def test_initial_shape(self):
@@ -198,7 +198,7 @@ class Testtetromino(unittest.TestCase):
         Test that an invalid shape raises an InvalidShapeError.
         """
         with self.assertRaises(InvalidShapeError):
-            tetromino(Shape(2, 3, [[1, 0], [1, 0]]), "Invalid")
+            Tetromino(Shape(2, 3, [[1, 0], [1, 0]]), "Invalid")
 
 
 if __name__ == "__main__":

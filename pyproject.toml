@@ -3,9 +3,8 @@ name = "calendar-tetromino-puzzle"
 version = "0.1.0"
 description = "A gRPC server that solves the calendar Tetromino puzzle"
 requires-python = ">=3.11,<3.12"
-# The versions requirements.txt pinned, carried over unchanged.
+# The versions requirements.txt pinned.
 dependencies = [
-    "ace_tools==0.0",
     "dlx==1.0.4",
     "grpcio==1.71.0",
     "grpcio-tools==1.71.0",
